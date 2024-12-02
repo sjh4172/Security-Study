@@ -1,6 +1,7 @@
 package com.cos.security1.config.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,6 +13,7 @@ import com.cos.security1.repository.UserRepository;
 // 시큐리티 설정에서 loginProcessingUrl으로 login 요청이 오면
 // 자동으로 UserDetailsService 타입으로 IOC 되어있는 loadUserByUsername 함수가 실행됨
 
+// 함수 종료시 @AuthenticationPrincipal 어노테이션이 만들어진다
 @Service
 public class PrincipalDetailsService implements UserDetailsService{
 
